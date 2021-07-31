@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.manuelankner.FlutterFormBuilder.AppWindow.WindowAppController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1500.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newWireframe" text="New" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As" />
+                  <MenuItem mnemonicParsing="false" text="Export" />
+                  <MenuItem mnemonicParsing="false" text="Import" />
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <MenuItem mnemonicParsing="false" text="Undo" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem mnemonicParsing="false" text="Helper" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Model">
+              <items>
+                <MenuItem fx:id="addModel" mnemonicParsing="false" onAction="#newModel" text="Add Model" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Tools">
+              <items>
+                <MenuItem mnemonicParsing="false" text="ToolBox" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="modelTab" layoutX="297.0" layoutY="26.0" prefHeight="772.0" prefWidth="722.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Main Model">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="743.0" prefWidth="712.0">
+                     <children>
+                        <ImageView fx:id="main_image" fitHeight="650.0" fitWidth="300.0" layoutX="211.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/wireframe2.jpg" />
+                           </image>
+                        </ImageView>
+                        <JFXSlider layoutX="713.0" layoutY="-257.0" orientation="VERTICAL" prefHeight="1001.0" prefWidth="14.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <JFXSlider layoutX="1286.0" layoutY="30.0" opacity="0.0" orientation="VERTICAL" prefHeight="941.0" prefWidth="14.0" />
+      <ToolBar layoutX="1.0" layoutY="25.0" prefHeight="35.0" prefWidth="298.0">
+         <items>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Library" wrappingWidth="51.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField />
+         </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.5452609158679447" layoutY="60.0" orientation="VERTICAL" prefHeight="941.0" prefWidth="298.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="296.0">
+               <children>
+                  <Accordion fx:id="acc_layouts" prefHeight="472.0" prefWidth="268.0">
+                    <panes>
+                      <TitledPane fx:id="tp1" animated="false" prefHeight="397.0" prefWidth="292.0" text="Widgets">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="314.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane fx:id="tp2" animated="false" text="Colors">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                      <TitledPane fx:id="tp3" animated="false" text="Container">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </TitledPane>
+                        <TitledPane fx:id="tp4" animated="false" prefHeight="397.0" prefWidth="306.0" text="Controls">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="296.0" />
+        </items>
+      </SplitPane>
+      <JFXSlider layoutX="297.0" layoutY="798.0" prefHeight="35.0" prefWidth="722.0" />
+      <Accordion layoutX="1019.0" layoutY="27.0" prefHeight="472.0" prefWidth="202.0">
+        <panes>
+          <TitledPane animated="false" prefHeight="422.0" prefWidth="238.0" text="Properties">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="232.0" prefWidth="202.0" text="Layout">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" prefHeight="402.0" prefWidth="202.0" text="Code">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btn_open_editor" layoutY="2.0" mnemonicParsing="false" onAction="#openEditor" text="Open Editor" textFill="#651111" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
